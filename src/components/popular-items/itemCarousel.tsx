@@ -24,7 +24,7 @@ export default function ItemCarousel({
       {items.map((data, index) => {
         return (
           <div key={index} className="item max-w-2xl my-6">
-            <img src={data.src} alt={data.alt} />
+            <img src={data.src[0]} alt={data.alt} />
             <h1 className="text-base md:text-2xl font-semibold py-3">
               {data.heading}
             </h1>
