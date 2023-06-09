@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 
 export default function HeroSection(): ReactElement {
   return (
@@ -15,7 +16,10 @@ export default function HeroSection(): ReactElement {
             با یک نگاه کوچک به گالری ما از گذراندن ساعت ها برای پیدا کردن سرویس
             مورد نظر خود اجتناب کنید
           </p>
-          <button className="bg-lime-350 w-fit py-2 px-7 mr-11 mt-3 rounded-3xl transition-all active:bg-lime-550 hover:scale-105 group relative">
+          <Link
+            to="/PardisMobl/galary"
+            className="bg-lime-350 w-fit py-2 px-7 mr-11 mt-3 rounded-3xl transition-all active:bg-lime-550 hover:scale-105 group relative"
+          >
             <span className="transition duration-200 opacity-0 group-hover:-translate-x-1 group-hover:opacity-100 absolute left-[0.75rem] top-[0.68rem]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +37,7 @@ export default function HeroSection(): ReactElement {
               </svg>
             </span>
             مشاهده محصولات ما
-          </button>
+          </Link>
         </div>
         <div className="datail md:flex hidden ">
           <div className="pic relative shrink-0">

@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 
 import { Image } from "../../layout/home/popularItems";
 
@@ -32,7 +33,7 @@ export default function ItemCarousel({
               {data.description}
             </p>
             <button className="bg-emerald-950 text-white text-xs md:text-base py-2 px-5 mr-px transition-transform rounded-lg hover:scale-105">
-              مشاهده
+              <Link to="/PardisMobl/galary">مشاهده</Link>
             </button>
           </div>
         );

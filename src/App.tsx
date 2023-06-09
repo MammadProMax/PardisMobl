@@ -20,9 +20,9 @@ const App = (): ReactElement => {
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/galary" element={<Galary />} />
-            <Route path="/galary/:id" element={<GalaryItem />} />
+            <Route path="/PardisMobl/" element={<Home />} />
+            <Route path="/PardisMobl/galary" element={<Galary />} />
+            <Route path="/PardisMobl/galary/:id" element={<GalaryItem />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </main>

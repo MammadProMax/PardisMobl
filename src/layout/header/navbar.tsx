@@ -53,7 +53,7 @@ export default function Navbar(): ReactElement {
               <ul className="flex flex-row gap-4 text-sm sm:text-base">
                 <li>
                   <NavLink
-                    to="/galary"
+                    to="/PardisMobl/galary"
                     className={({ isActive }) =>
                       ` ${
                         isActive ? "opacity-100 font-semibold" : "opacity-80"
@@ -83,7 +83,7 @@ export default function Navbar(): ReactElement {
             </div>
             <div className="logo">
               <Link
-                to="/"
+                to="/PardisMobl/"
                 className="text-2xl font-semibold font-pacifico relative bottom-1 pl-4 cursor-pointer"
               >
                 Pardis

@@ -17,7 +17,7 @@ export const saleItems: Image[] = Array(6).fill({
 const GridCards = (): ReactElement => {
   const itemsUI = saleItems?.map((data, index) => {
     return (
-      <Link key={index} to={`/galary/:${index}`}>
+      <Link key={index} to={`/PardisMobl/galary/:${index}`}>
         <div className="item group flex flex-col justify-center w-[90%] sm:w-full cursor-pointer p-4 mx-auto transition-colors duration-300 overflow-hidden relative hover:bg-gray-100">
           <img src={data.src[0]} alt={data.alt} />
           <p className="text-sm lg:text-base opacity-90 my-4 md:text-lg">
