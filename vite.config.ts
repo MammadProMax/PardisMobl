@@ -7,5 +7,5 @@ export default defineConfig({
   server: {
     open: "/",
   },
-  base: "/pardisMobl/",
+  base: "/PardisMobl/",
 });
