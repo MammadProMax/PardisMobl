@@ -1,25 +1,20 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import { Image } from "../home/popularItems";
-
-export const saleItems: Image[] = Array(6).fill({
-  src: [
-    "https://img.freepik.com/free-photo/craftsman-using-circular-saw_1157-45888.jpg?size=626&ext=jpg",
-    "https://img.freepik.com/free-photo/craftsman-using-circular-saw_1157-45888.jpg?size=626&ext=jpg",
-    "https://img.freepik.com/free-photo/craftsman-using-circular-saw_1157-45888.jpg?size=626&ext=jpg",
-  ],
-  description: `نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
-                برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف`,
-  alt: "محصولات محبوب",
-});
+import { saleItems } from "../../service/imageScript";
 
 const GridCards = (): ReactElement => {
   const itemsUI = saleItems?.map((data, index) => {
     return (
       <Link key={index} to={`/PardisMobl/galary/:${index}`}>
         <div className="item group flex flex-col justify-center w-[90%] sm:w-full cursor-pointer p-4 mx-auto transition-colors duration-300 overflow-hidden relative hover:bg-gray-100">
-          <img src={data.src[0]} alt={data.alt} />
+          <LazyLoadImage
+            alt={data.alt}
+            src={data.src[0]}
+            className="object-cover h-56" // use normal <img> attributes as props
+          />
+          <h1 className="font-bold pt-5">{data.heading}</h1>
           <p className="text-sm lg:text-base opacity-90 my-4 md:text-lg">
             {data.description}
           </p>

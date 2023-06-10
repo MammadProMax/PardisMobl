@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import { saleItems } from "../layout/galary/gridCards";
+import { saleItems } from "../service/imageScript";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -25,33 +26,27 @@ const GalaryItem = () => {
 
     return (
       <>
-        <div className="item group flex flex-col justify-center w-1/2 p-4 my-10 mx-auto relative">
-          <div className="slider">
+        <div className="item group flex flex-col justify-center w-1/2 py-[1.85rem] px-4 my-10 mx-auto relative">
+          <div className="slider mb-8">
             <Slider {...settings}>
               {data.src.map((_, index) => (
-                <img key={index} src={_} alt={data.alt} />
+                <LazyLoadImage
+                  alt={data.alt}
+                  src={_}
+                  className="h-[36rem] object-contain" // use normal <img> attributes as props
+                />
               ))}
             </Slider>
           </div>
 
-          <h1 className="text-sm lg:text-base opacity-90 my-4 md:text-lg">
+          <h1 className="text-md lg:text-lg font-bold my-4 md:text-lg">
             {data.heading}
           </h1>
-          <p className="text-sm lg:text-base opacity-90 my-4 md:text-lg">
+          <p className="text-md lg:text-base my-4 md:text-lg">
             {data.description}
           </p>
-          <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
-            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
-            زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-            متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
-            رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد
-            کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
-            راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-            حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
-            طراحی اساسا مورد استفاده قرار گیرد.
+          <p className="text-sm lg:text-base opacity-90 my-4 md:text-lg">
+            {data.detail}
           </p>
         </div>
       </>

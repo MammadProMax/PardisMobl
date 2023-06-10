@@ -1,4 +1,7 @@
 import { ReactElement, useState, lazy, Suspense } from "react";
+import F1Mobl from "../../assets/Mohtava/Mobl/1/321f8b3871ecf3718ed0a8827e9240f9c7e2b64d_1642682074.jpg";
+import F2Mobl from "../../assets/Mohtava/Mobl/2/2c144312393d14d50cf0d628af5d0d2c5d921d6e_1659594664.jpg";
+import F3Mobl from "../../assets/Mohtava/Mobl/3/1e48acf73b5a8312baa745cbc426b63b502ed16f_1643011732.jpg";
 
 const Navigator = lazy(
   () => import("../../components/popular-items/navigator")
@@ -12,37 +15,29 @@ export interface Image {
   heading: string;
   description: string;
   alt: string;
+  detail: string;
 }
 
 export default function PopularItems(): ReactElement {
   const [navState, setNavState] = useState(0);
-  const items: Image[] = [
+  const items: Omit<Image, "detail">[] = [
     {
-      src: [
-        "https://img.freepik.com/free-photo/craftsman-using-circular-saw_1157-45888.jpg?size=626&ext=jpg",
-      ],
-      heading: "لورم ایپسوم متن ساختگی با تولید سادگی",
-      description: `نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
-                برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف`,
-      alt: "محصولات محبوب",
+      src: [F1Mobl],
+      heading: "مبل راحتی 8 نفره مدل دیبا",
+      description: `کاناپه : ۲۰۰ قسمت ال : ۱۰۰ کاناپه تخت خواب شو : ۲۲۰ مبل تک نفره : ۹۰ سانتی‌متر`,
+      alt: "محصولات",
     },
     {
-      src: [
-        "https://img.freepik.com/free-photo/craftsman-using-circular-saw_1157-45888.jpg?size=626&ext=jpg",
-      ],
-      heading: "لورم ایپسوم متن ساختگی با تولید سادگی",
-      description: `نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
-                برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف`,
-      alt: "محصولات محبوب",
+      src: [F2Mobl],
+      heading: "مبل راحتی 8 نفره مدل کارلو کرنر",
+      description: `کاناپه : ۲۰۰ قسمت ال : ۱۰۰ کاناپه تخت خواب شو : ۲۲۰ مبل تک نفره : ۹۰ سانتی‌متر`,
+      alt: "محصولات",
     },
     {
-      src: [
-        "https://img.freepik.com/free-photo/craftsman-using-circular-saw_1157-45888.jpg?size=626&ext=jpg",
-      ],
-      heading: "لورم ایپسوم متن ساختگی با تولید سادگی",
-      description: `نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
-                برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف`,
-      alt: "محصولات محبوب",
+      src: [F3Mobl],
+      heading: "مبل راحتی 8 نفره مدل نیلز",
+      description: `دارای یک عدد کاناپه ۳ نفره چستر و یک عدد کاناپه ۳نفره ماهیچه ای و دو عدد مبل تک نفره`,
+      alt: "محصولات",
     },
   ];
   return (

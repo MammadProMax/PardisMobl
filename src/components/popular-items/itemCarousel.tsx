@@ -5,7 +5,7 @@ import { Image } from "../../layout/home/popularItems";
 
 type AppProps = {
   navigation: number;
-  items: Image[];
+  items: Omit<Image, "detail">[];
 };
 
 export default function ItemCarousel({
@@ -16,16 +16,20 @@ export default function ItemCarousel({
     <div
       className={`transition duration-700 ease-x ${
         navigation === 1
-          ? `lg:-translate-y-[39.5rem] md:-translate-y-[35rem] -translate-y-[24.8rem]`
+          ? `lg:-translate-y-[39.5rem] md:-translate-y-[36rem] -translate-y-[23.5rem]`
           : navigation === 2
-          ? `lg:-translate-y-[79rem] md:-translate-y-[71rem] -translate-y-[49rem]`
+          ? `lg:-translate-y-[79rem] md:-translate-y-[72rem] -translate-y-[49rem]`
           : ""
       }`}
     >
       {items.map((data, index) => {
         return (
           <div key={index} className="item max-w-2xl my-6">
-            <img src={data.src[0]} alt={data.alt} />
+            <img
+              src={data.src[0]}
+              alt={data.alt}
+              className="object-cover h-[200px] w-[288px] md:h-[361px] md:w-[528px] lg:h-[417px] lg:w-[617px]"
+            />
             <h1 className="text-base md:text-2xl font-semibold py-3">
               {data.heading}
             </h1>
